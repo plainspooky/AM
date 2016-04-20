@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+ /*
+    fix a bizarre border-radius on 'navbar' class
+*/
+.navbar {
+    border-radius: 0;
+}

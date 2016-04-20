@@ -1,0 +1,33 @@
+<h1><%= t('contacts') %></h1>
+<% line=0 %>
+  <% unless @contacts.empty? %>
+    <table class='table table-striped'>
+    <thead>
+        <tr>
+        <th>#</th><th><%= t('name') %></th>
+        <th><%= t('nickname') %></th>
+        </tr>
+    </thead>
+    <tbody>
+    <% @contacts.each do |contact| %>
+    <tr>
+        <td><%= line+=1 %>
+        <td><%= contact.name %></td>
+        <td><%= contact.nickname || '---' %></td>
+    </tr>
+    <% end %>
+    </tbody>
+    </table>
+    <div><%= line %>
+    <% if line==1 %>
+        <%= t('entry') %>
+    <% else %>
+        <%= t('entries') %>
+    <% end %>
+    </div>
+  <% else %>
+    <div class="alert alert-info" role="alert">
+        <strong><%= t('alert') =%></strong>:
+        <%= t('no contacts yet!') %>
+    </div>
+  <% end %>
