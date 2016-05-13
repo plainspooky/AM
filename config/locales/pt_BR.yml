@@ -1,5 +1,6 @@
 pt_BR:
     app_title: "Agenda Mequetrefe"
+    app_description: "Um exemplo de aplicação em Rails"
     contacts: "Contatos"
     new contact: "Novo contato"
     about: "Sobre"
@@ -9,3 +10,4 @@ pt_BR:
     entries: "entradas"
     alert: "Atenção"
     no contacts yet!: "Ainda sem contatos!"
+    actions: "Ações"

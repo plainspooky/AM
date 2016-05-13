@@ -7,13 +7,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"><%= t('app_title') %></a>
+      <%= link_to t('app_title'), root_path, class:"navbar-brand" %>
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><a href="#"><%= t('contacts') %></a></li>
-        <li><a href="#"><%= t('new contact') %></a></li>
-        <li><a href="#"><%= t('about') %></a></li>
+        <li><%= link_to t('contacts'), contacts_path %></li>
+        <li><%= link_to t('new contact'), new_contact_path %></li>
+        <li><%= link_to t('about'), about_path %></li>
       </ul>
     </div>
   </div>
