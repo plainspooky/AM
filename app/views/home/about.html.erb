@@ -1,9 +1,35 @@
 <h1><%= t('about') %></h1>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eleifend
-fermentum arcu, sit amet fringilla ipsum fringilla molestie. Morbi eget
-consectetur justo, eget vestibulum turpis. Quisque imperdiet turpis venenatis
-lobortis consequat. Sed porttitor arcu lobortis, laoreet risus id, laoreet
-nunc. Nam placerat luctus finibus. Praesent et ipsum efficitur, rhoncus ex non,
-posuere enim. Donec iaculis est diam, nec iaculis risus euismod id. Donec ac
-ipsum nec magna vulputate efficitur. Nam mollis orci at turpis mollis
-dictum.</p>
+<div class='well'>
+  <div class="media">
+    <div class="media-left media-top">
+      <a href="#">
+        <img class="media-object" src="AM_logo_128x128.png" alt="AM"/>
+      </a>
+    </div>
+    <div class="media-body">
+      <h2 class="media-heading"><%= t('app_title') %></h2>
+      <p><em><%= t('app_description') =%></p>
+      <p>Esta é uma aplicação simples escrita em <a href='http://rubyonrails.org/'>Ruby
+      on Rails</a> e criada com o propósito de servir como um exemplo razoavelmente documentado
+      de como é programar neste <em>framework</em>. Além do próprio <strong>Rails</strong>
+      foram também utilizados o <em>framework</em> <strong>Bootstrap</strong> para a geração
+      do HTML e CSS, o <strong>Atom</strong> para a edição e o <strong>Git</strong> para o
+      controle de versão no código.</p>
+      <p>O processo de desenvolvimento pode ser acompanhado nas seguintes publicações:</p>
+      <ul>
+      <%
+        #
+        # isto aqui não é bonito mas facilita a vida caso eu crie uma 4ª ou 5ª partes
+        #
+        posts=[ 'giovannireisnunes.wordpress.com/2016/04/22/exemplo-em-rails-parte-1/',
+                'giovannireisnunes.wordpress.com/2016/05/13/exemplo-em-rails-parte-2/',
+                'giovannireisnunes.wordpress.com/2016/05/20/exemplo-em-rails-parte-3/' ]
+        parte=0
+      %>
+      <% posts.each do |post| %>
+        <li><a href='<%= "https://#{post}" %>' target='_blank'>Exemplo em Rails, parte <%= parte+=1 %></a></li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

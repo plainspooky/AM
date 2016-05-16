@@ -1,8 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-<h1><%= @contact.name %>
-<%= link_to ('<span class="glyphicon glyphicon-pencil"></span>').html_safe, edit_contact_path(@contact), class:"btn btn-primary btn-md" %>
-</h1>
-<hr/>
-<p><strong><%= t('nickname') %></strong> :
-<%= @contact.nickname || '---' %></p>
+<div class='alert'><%= notice %></div>
+<h1><%= @contact.name %> <%=
+link_to ('<span class="glyphicon glyphicon-pencil"></span>').html_safe, edit_contact_path(@contact), class:"btn btn-primary btn-md" %></h1>
+<p><strong><%= t('nickname') %></strong> : <%= @contact.nickname || '---' %></p>
+<p><strong><%= t('email_address') %></strong> : <%= @contact.email || '---' %></p>
+<div class='alert alert-info'>
+  <%= t('created_at') %>: <em><%= @contact.created_at %></em> -- <%= t('updated_at') %>: <em><%= @contact.updated_at %></em>
+</div>

@@ -1,39 +1,39 @@
-<h1><%= t('contacts') %>
-    <%= link_to ('<span class="glyphicon glyphicon-plus"></span>').html_safe, new_contact_path, class:"btn btn-success btn-md" %></h1>
+<div class='alert'><%= notice %></div>
+<h1><%= t('my_contacts') %> <%=
+  link_to ('<span class="glyphicon glyphicon-plus"></span>').html_safe, new_contact_path, class:"btn btn-success btn-md"
+%></h1>
 <%
-    # recupera o número de registros na base de dados
-    line=@contacts.count
+  # recupera o número de registros na base de dados
+  line=@contacts.count
 %>
-    <% unless @contacts.empty? %>
-    <table class='table table-striped'>
+<% unless @contacts.empty? %>
+  <table class='table table-striped'>
     <thead>
-        <tr>
+      <tr>
         <th><%= t('name') %></th>
         <th><%= t('nickname') %></th>
-        <th><%= t('actions') %></th
+        <th><%= t('email_address') %></th>
+        <th><%= t('actions') %></th>
         </tr>
     </thead>
     <tbody>
-    <% @contacts.each do |contact| %>
-    <tr>
-        <td><%= contact.name %></td> <td><%= contact.nickname || '---' %></td> <td>
-        <%= link_to ('<span class="glyphicon glyphicon-eye-open"></span>').html_safe, contact, class:"btn btn-info btn-xs" %>
-        <%= link_to ('<span class="glyphicon glyphicon-pencil"></span>').html_safe, edit_contact_path(contact), class:"btn btn-primary btn-xs" %>
-        <%= link_to ('<span class="glyphicon glyphicon-trash"></span>').html_safe, contact, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-xs" %></td>
-    </tr>
-    <% end %>
+      <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= contact.name %></td>
+        <td><%= contact.nickname || '- - -' %></td>
+        <td><%= contact.email || '- - -' %></td>
+        <td><%= link_to ('<span class="glyphicon glyphicon-eye-open"></span>').html_safe, contact, class:"btn btn-info btn-xs" %> <%=
+                link_to ('<span class="glyphicon glyphicon-pencil"></span>').html_safe, edit_contact_path(contact), class:"btn btn-primary btn-xs" %> <%=
+                link_to ('<span class="glyphicon glyphicon-trash"></span>').html_safe, contact, method: :delete, data: { confirm: t('are_you_sure?') }, class: "btn btn-danger btn-xs" %></td>
+      </tr>
+      <% end %>
     </tbody>
-    </table>
-    <div><%= line %>
-    <% if line==1 %>
-    <%= t('entry') %>
-    <% else %>
-    <%= t('entries') %>
-    <% end %>
-    </div>
-  <% else %>
-    <div class="alert alert-info" role="alert">
-        <strong><%= t('alert') =%></strong>:
-        <%= t('no contacts yet!') %>
-    </div>
-  <% end %>
+  </table>
+  <div class='alert'>
+    <%= t('total_of') %> <%= line %> <% if line==1 %><%= t('contact') %><% else %><%= t('contacts') %><% end %>
+  </div>
+<% else %>
+  <div class="alert alert-warning" role="alert">
+    <strong><%= t('alert') =%></strong> : <%= t('no_contacts_yet') %>!
+  </div>
+<% end %>

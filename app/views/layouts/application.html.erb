@@ -10,10 +10,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render 'home/navigation.html.erb' %>
-<div class='container'>
-<%= yield %>
-<%= render 'home/footer.html.erb' %>
-</div>
-</body>
+  <%= render 'home/navigation.html.erb' %>
+  <div class='container'>
+    <%= yield %>
+  </div>
+  <hr/>
+  <%= render 'home/footer.html.erb' %>
+  </body>
 </html>
