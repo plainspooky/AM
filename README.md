@@ -1,4 +1,3 @@
-![AM Logo](https://raw.githubusercontent.com/plainspooky/AM/master/public/AM_logo_128x128.png)
 # Agenda Mequetrefe
 _Um exemplo de aplicação em Ruby on Rails_
 
