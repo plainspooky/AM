@@ -29,6 +29,7 @@
       <% end %>
     </tbody>
   </table>
+  <%= paginate @contacts %>
   <div class='alert'>
     <%= t('total_of') %> <%= line %> <% if line==1 %><%= t('contact') %><% else %><%= t('contacts') %><% end %>
   </div>
