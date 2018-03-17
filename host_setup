@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+echo "VM setup:" &&\
+	apt-get update &&\
+	apt-get --yes dist-upgrade &&\ 
+	apt-get --yes install gcc libsqlite3-dev make \
+		rake ruby ruby-bundler ruby-dev ruby-execjs ruby-json \
+		zlib1g-dev
+
+if [[ "${LC_CTYPE}" != "" ]]; then
+	locale-gen ${LC_TYPE}
+fi
+
